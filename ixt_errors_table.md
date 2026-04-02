@@ -20,6 +20,54 @@
 
 ---
 
+## Handcrafted / Generated Form Definition Errors
+
+These errors occur when building .ixt files from scratch (e.g., with Claude Code) rather than exporting from the UI.
+
+| Error Message / Symptom | Trigger | Likely Cause | Resolution |
+|---|---|---|---|
+| `"Value cannot be null. Parameter name: source"` | Importing a minimal hand-built .ixt | TemplateDefinition missing required top-level elements | Include all top-level elements even if empty: `SchemaVersion`, `ApprovalRuleCategories`, `ApprovalRuleDefinitions`, `AttachmentTypes`, `Attachments`, `ComponentGroupTypes`, `CustomFields`, `Datasources`, `ExternalSourceTypes`, `FormDefinitions`, `Groups`, `ImportanceLevels`, `IntelligentEntries`, `NotificationTemplates`, `PartyTypes`, `QueryIntegrations`, `RequirementGroups`, `ScoreDefinitions`, `ScoreLevelSets`, `TeamRoles`, `Users`, `VirtualTables`, `WorkflowDefinitions` |
+| `"Sequence contains no matching element"` (.NET LINQ `.Single()`) | Importing a form with integration references pointing to non-existent entities | `DatasourceIntegrationDefinition` or `IntegrationId` references a datasource/integration ID that doesn't exist in the target tenant | Set all `DatasourceIntegrationDefinition` elements to `i:nil="true"`; set `QueryIntegrations` to empty at both TemplateDefinition and FormDefinition level |
+| `"This form definition is invalid and hence is in a draft state"` | Form imports but is marked invalid/draft | One or more of: (1) non-hex question IDs, (2) missing FormDefinition required fields, (3) Section missing `Title`/`TitleExpression`/`RepeatableGroupId`, (4) Page missing `Title`, (5) `DisplayedScoreLevelLabel` empty instead of `i:nil="true"` | See ID format rules and required fields below |
+
+### Required Field Checklist for Hand-Built FormDefinitions
+
+**Question / Page / Section IDs — must be hex format:**
+- Pattern: `{11-hex-chars}-{2-3-hex-chars}-{10-hex-chars}` e.g. `196016b4c80-3-c3d4e5f678`
+- Page `<d2p1:Id>` and Section `<d2p1:Id>` also require hex format (NOT integers)
+- FormDefinition `<Id>` is a plain integer and is fine as-is
+
+**FormDefinition required elements** (all must be present):
+```
+CancelSectionId (i:nil="true")
+DisplayDefaultCommentFieldOnCancel
+DisplayedScoreLevelLabel (i:nil="true")  ← must be nil, not empty string
+FormRequestSummary > RequestSummaries
+Header > DisplayLinkedRequest, HeaderItems, ItemsPerColumn, Visibility
+RequestNameQuestion (i:nil="true")
+RequestNameTemplate (i:nil="true")
+ScoreDefinitionIds
+ScoreDefinitions
+ScoreDisplayFormat
+ScoreMappings
+SharePointFolderTemplate (i:nil="true")
+```
+
+**Section required elements** (in addition to common fields):
+```
+<d2p1:Name i:nil="true" />            ← Name should be nil
+<d2p1:RepeatableGroupId i:nil="true" />
+<d2p1:Title>Section Display Name</d2p1:Title>   ← Title is the visible label
+<d2p1:TitleExpression i:nil="true" />
+```
+
+**Page required elements:**
+```
+<d2p1:Title>Page Display Name</d2p1:Title>
+```
+
+---
+
 ## Form Definition Structure Errors
 
 | Error Message / Symptom | Trigger | Likely Cause | Resolution |
@@ -39,3 +87,7 @@
 - GUID uniqueness is critical — duplicate GUIDs across import attempts cause phantom "already exists" errors.
 - Always import **form definitions before workflow definitions** when both are present.
 - Cloud ↔ On-prem imports are **not bidirectional** — higher version exports cannot go to lower version targets.
+- When building **workflow definitions** from scratch: `ActivityState` and `ConflictSearchState` use `xsi:type="d5p1:..."` where `d5p1 = http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.States`; `SingleApprovalState` uses `d8p1 = http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.States.Approvals`. The `states` list element must re-declare `d5p1` namespace since it is a sibling (not descendant) of `InitialState`.
+- **Workflow → Form linkage**: `FormDefinitionId` in the WorkflowDefinition must match the `Id` of an existing FormDefinition. Import the form (.ixt) first, then the workflow (.ixt), or include both in the same TemplateDefinition export.
+- **ConflictSearchState** requires `ClaimRequiredForActions`, `CourtesyOnly`, `Reviewers` (with at least one `StateReviewer`), `ConflictSearchIntegrationId`, and `RelatedPartiesQuestionId` after `Transitions`.
+- **ActivityState for conflicts** uses `CreateConflictsSearchActivity` inside `<d5p1:Activities>` to configure the search term mappings from form questions to conflict search parties.
