@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TemplateDefinition xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Templates">
+  <SchemaVersion xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model">4300</SchemaVersion>
+  <ApprovalRuleCategories xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.Approval" />
+  <ApprovalRuleDefinitions xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.Approval" />
+  <AttachmentTypes xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Common" />
+  <Attachments xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Common" />
+  <ComponentGroupTypes xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Common.Groups" />
+  <CustomFields xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Common" />
+  <Datasources xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Datasources" />
+  <ExternalSourceTypes xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Common" />
+  <FormDefinitions xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Forms" />
+  <Groups xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Entities" />
+  <ImportanceLevels xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Common" />
+  <IntelligentEntries xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows" />
+  <NotificationTemplates xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Notifications" />
+  <PartyTypes xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Entities" />
+  <QueryIntegrations xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Integrations" />
+  <RequirementGroups xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Requests" />
+  <ScoreDefinitions xmlns:d4p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Scores" />
+  <ScoreLevelSets xmlns:d4p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Scores" />
+  <TeamRoles xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Entities" />
+  <Users xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Entities" />
+  <VirtualTables xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.DataSets.VirtualTables" />
+  <WorkflowDefinitions xmlns:d2p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows">
+    <d2p1:WorkflowDefinition>
+      <Id xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model">9002</Id>
+      <SchemaVersion xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model">4300</SchemaVersion>
+      <d2p1:CanPutOnHold>false</d2p1:CanPutOnHold>
+      <d2p1:DefinitionId>9002</d2p1:DefinitionId>
+      <d2p1:Description i:nil="true" />
+      <d2p1:Draft>false</d2p1:Draft>
+      <d2p1:FormDefinitionId>9001</d2p1:FormDefinitionId>
+      <d2p1:GlobalSubRequestsConfiguration i:nil="true" />
+      <d2p1:GroupName i:nil="true" />
+      <d2p1:HideFromRequestListFilters>false</d2p1:HideFromRequestListFilters>
+      <d2p1:IntelligentEntryIds i:nil="true" />
+      <d2p1:MaximumTransitionButtonsCount>5</d2p1:MaximumTransitionButtonsCount>
+      <d2p1:Name>AML/KYC - Moody&apos;s GRID</d2p1:Name>
+      <d2p1:NotificationEvents />
+      <d2p1:NotificationRedirectionConfiguration>
+        <d2p1:DevelopmentRecipients />
+        <d2p1:ProductionRecipients />
+        <d2p1:RedirectInDevelopment>false</d2p1:RedirectInDevelopment>
+        <d2p1:RedirectInProduction>false</d2p1:RedirectInProduction>
+        <d2p1:RedirectInTest>false</d2p1:RedirectInTest>
+        <d2p1:TestRecipients />
+      </d2p1:NotificationRedirectionConfiguration>
+      <d2p1:OnHoldById i:nil="true" />
+      <d2p1:PutOnHoldAfterInactiveFor i:nil="true" />
+      <d2p1:ReminderNotificationEvents />
+      <d2p1:RequestCreationConfiguration>
+        <d2p1:ClientRequired>false</d2p1:ClientRequired>
+        <d2p1:MatterRequired>false</d2p1:MatterRequired>
+        <d2p1:ShowClientLookup>true</d2p1:ShowClientLookup>
+        <d2p1:ShowMatterLookup>false</d2p1:ShowMatterLookup>
+      </d2p1:RequestCreationConfiguration>
+      <d2p1:SortOrderNumber>1</d2p1:SortOrderNumber>
+      <d2p1:TaskNotificationEvents xmlns:d4p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.States.Tasks" />
+      <d2p1:Version>0</d2p1:Version>
+      <d2p1:VisibilityConfiguration>
+        <d2p1:HideActivities>false</d2p1:HideActivities>
+        <d2p1:HideApprovalRules>true</d2p1:HideApprovalRules>
+        <d2p1:HideComments>false</d2p1:HideComments>
+        <d2p1:HideFiles>false</d2p1:HideFiles>
+        <d2p1:HideFilesOnRequestDetails>false</d2p1:HideFilesOnRequestDetails>
+        <d2p1:HideNotes>false</d2p1:HideNotes>
+        <d2p1:HidePeople>false</d2p1:HidePeople>
+        <d2p1:HideSubRequests>false</d2p1:HideSubRequests>
+      </d2p1:VisibilityConfiguration>
+      <d2p1:WorkflowDefinitionType>RequestConflictsSearch</d2p1:WorkflowDefinitionType>
+      <d2p1:WorkflowThread>
+        <d2p1:InitialDecision i:nil="true" />
+        <d2p1:InitialState xmlns:d5p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.States" z:Id="i20001" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+          <d2p1:Name>Create Request</d2p1:Name>
+          <d5p1:GroupName i:nil="true" />
+          <d5p1:NotificationEvents />
+          <d5p1:ReminderNotificationEvents />
+          <d5p1:RequirementGroupId i:nil="true" />
+          <d5p1:StateType>CreateRequest</d5p1:StateType>
+          <d5p1:Transitions xmlns:d6p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.Transitions">
+            <d6p1:WorkflowTransition z:Id="i20002">
+              <d2p1:Name>Auto</d2p1:Name>
+              <d6p1:CommentRequired>false</d6p1:CommentRequired>
+              <d6p1:CommentRequiredHelpText i:nil="true" />
+              <d6p1:DelayInterval i:nil="true" />
+              <d6p1:Destination z:Id="i20003" i:type="d5p1:ActivityState">
+                <d2p1:Name>Create Conflicts</d2p1:Name>
+                <d5p1:GroupName />
+                <d5p1:NotificationEvents />
+                <d5p1:ReminderNotificationEvents />
+                <d5p1:RequirementGroupId i:nil="true" />
+                <d5p1:StateType>Standard</d5p1:StateType>
+                <d5p1:Transitions>
+                  <d6p1:WorkflowTransition z:Id="i20004">
+                    <d2p1:Name>Auto</d2p1:Name>
+                    <d6p1:CommentRequired>false</d6p1:CommentRequired>
+                    <d6p1:CommentRequiredHelpText i:nil="true" />
+                    <d6p1:DelayInterval i:nil="true" />
+                    <d6p1:Destination z:Id="i20005" i:type="d5p1:ConflictSearchState">
+                      <d2p1:Name>Run Conflicts</d2p1:Name>
+                      <d5p1:GroupName />
+                      <d5p1:NotificationEvents />
+                      <d5p1:ReminderNotificationEvents />
+                      <d5p1:RequirementGroupId i:nil="true" />
+                      <d5p1:StateType>ConflictSearch</d5p1:StateType>
+                      <d5p1:Transitions>
+                        <d6p1:WorkflowTransition z:Id="i20006">
+                          <d2p1:Name>Approve</d2p1:Name>
+                          <d6p1:CommentRequired>false</d6p1:CommentRequired>
+                          <d6p1:CommentRequiredHelpText i:nil="true" />
+                          <d6p1:DelayInterval i:nil="true" />
+                          <d6p1:Destination z:Id="i20007" i:type="d5p1:FinalState">
+                            <d2p1:Name>Final</d2p1:Name>
+                            <d5p1:GroupName i:nil="true" />
+                            <d5p1:NotificationEvents />
+                            <d5p1:ReminderNotificationEvents />
+                            <d5p1:RequirementGroupId i:nil="true" />
+                            <d5p1:StateType>Final</d5p1:StateType>
+                            <d5p1:Transitions />
+                            <d5p1:Vertices xmlns:d9p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.Visualization" />
+                          </d6p1:Destination>
+                          <d6p1:HideConfirmation>false</d6p1:HideConfirmation>
+                          <d6p1:Label>Complete</d6p1:Label>
+                          <d6p1:ShowAsButton>false</d6p1:ShowAsButton>
+                          <d6p1:TransitionColor>Green</d6p1:TransitionColor>
+                          <d6p1:TransitionOrder i:nil="true" />
+                          <d6p1:TransitionType>Approve</d6p1:TransitionType>
+                        </d6p1:WorkflowTransition>
+                        <d6p1:WorkflowTransition z:Id="i20008">
+                          <d2p1:Name>Cancel</d2p1:Name>
+                          <d6p1:CommentRequired>false</d6p1:CommentRequired>
+                          <d6p1:CommentRequiredHelpText i:nil="true" />
+                          <d6p1:DelayInterval i:nil="true" />
+                          <d6p1:Destination i:nil="true" />
+                          <d6p1:HideConfirmation>false</d6p1:HideConfirmation>
+                          <d6p1:Label i:nil="true" />
+                          <d6p1:ShowAsButton>false</d6p1:ShowAsButton>
+                          <d6p1:TransitionColor>Red</d6p1:TransitionColor>
+                          <d6p1:TransitionOrder i:nil="true" />
+                          <d6p1:TransitionType>Cancel</d6p1:TransitionType>
+                        </d6p1:WorkflowTransition>
+                      </d5p1:Transitions>
+                      <d5p1:ClaimRequiredForActions>false</d5p1:ClaimRequiredForActions>
+                      <d5p1:CourtesyOnly>false</d5p1:CourtesyOnly>
+                      <d5p1:Reviewers>
+                        <d5p1:StateReviewer>
+                          <d5p1:GrantCondition xmlns:d9p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Forms.Conditions">
+                            <AdvancedExpression xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Expressions" />
+                            <CollectionType xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Expressions">All</CollectionType>
+                            <Conditions xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Expressions" />
+                          </d5p1:GrantCondition>
+                          <d5p1:PrincipalIds xmlns:d9p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                          <d5p1:Reviewer>
+                            <d2p1:Id>0</d2p1:Id>
+                            <d2p1:QuestionId i:nil="true" />
+                            <d2p1:TeamRoleKey i:nil="true" />
+                            <d2p1:Type>CreatedBy</d2p1:Type>
+                          </d5p1:Reviewer>
+                          <d5p1:StateActions>
+                            <d5p1:StateAction>
+                              <d5p1:Action>Approve</d5p1:Action>
+                              <d5p1:Transition>Approve</d5p1:Transition>
+                            </d5p1:StateAction>
+                            <d5p1:StateAction>
+                              <d5p1:Action>Cancel</d5p1:Action>
+                              <d5p1:Transition>Cancel</d5p1:Transition>
+                            </d5p1:StateAction>
+                          </d5p1:StateActions>
+                        </d5p1:StateReviewer>
+                      </d5p1:Reviewers>
+                      <d5p1:ConflictSearchIntegrationId i:nil="true" />
+                      <d5p1:RelatedPartiesQuestionId i:nil="true" />
+                    </d6p1:Destination>
+                    <d6p1:HideConfirmation>false</d6p1:HideConfirmation>
+                    <d6p1:Label i:nil="true" />
+                    <d6p1:ShowAsButton>false</d6p1:ShowAsButton>
+                    <d6p1:TransitionColor>Green</d6p1:TransitionColor>
+                    <d6p1:TransitionOrder i:nil="true" />
+                    <d6p1:TransitionType>Auto</d6p1:TransitionType>
+                  </d6p1:WorkflowTransition>
+                </d5p1:Transitions>
+                <d5p1:Activities xmlns:d8p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.Activities">
+                  <d8p1:WorkflowActivity xmlns:d9p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.Activities.Conflicts" i:type="d9p1:CreateConflictsSearchActivity">
+                    <d9p1:CreateSearchBehavior>NewSearchWithNewParties</d9p1:CreateSearchBehavior>
+                    <d9p1:RequestToConflictsSearchMapping>
+                      <d9p1:BasicPropertyMappings xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                      <d9p1:NameExpression xmlns:d10p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.DynamicExpressions" i:nil="true" />
+                      <d9p1:RelatedPartiesQuestionIds xmlns:d10p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+                    </d9p1:RequestToConflictsSearchMapping>
+                    <d9p1:RetrieveCorporateTreesAutomatically>false</d9p1:RetrieveCorporateTreesAutomatically>
+                    <d9p1:RetrieveCorporateTreesConditions xmlns:d10p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Forms.Conditions">
+                      <AdvancedExpression xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Expressions" />
+                      <CollectionType xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Expressions">All</CollectionType>
+                      <Conditions xmlns="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Expressions" />
+                    </d9p1:RetrieveCorporateTreesConditions>
+                    <d9p1:RunSearch>false</d9p1:RunSearch>
+                    <d9p1:SearchTermMappings />
+                  </d8p1:WorkflowActivity>
+                </d5p1:Activities>
+              </d6p1:Destination>
+              <d6p1:HideConfirmation>false</d6p1:HideConfirmation>
+              <d6p1:Label i:nil="true" />
+              <d6p1:ShowAsButton>false</d6p1:ShowAsButton>
+              <d6p1:TransitionColor>Green</d6p1:TransitionColor>
+              <d6p1:TransitionOrder i:nil="true" />
+              <d6p1:TransitionType>Auto</d6p1:TransitionType>
+            </d6p1:WorkflowTransition>
+          </d5p1:Transitions>
+        </d2p1:InitialState>
+        <d2p1:Name i:nil="true" />
+        <d2p1:states xmlns:d5p1="http://schemas.datacontract.org/2004/07/IntApp.Wilco.Model.Workflows.States">
+          <d5p1:WorkflowState z:Ref="i20001" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+          <d5p1:WorkflowState z:Ref="i20003" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+          <d5p1:WorkflowState z:Ref="i20005" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+          <d5p1:WorkflowState z:Ref="i20007" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </d2p1:states>
+      </d2p1:WorkflowThread>
+      <d2p1:notificationTemplates i:nil="true" />
+      <d2p1:queryIntegrations i:nil="true" />
+    </d2p1:WorkflowDefinition>
+  </WorkflowDefinitions>
+</TemplateDefinition>
